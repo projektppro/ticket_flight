@@ -1,6 +1,8 @@
-package com.ppro.buisnes;
+package com.ppro.controllers;
 
-import com.ppro.dao.CityRepository;
+import com.ppro.model.Airplane;
+import com.ppro.persistence.AirplaneServiceImpl;
+import com.ppro.persistence.CityRepository;
 import com.ppro.model.City;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +19,10 @@ public class TestController {
     @Autowired
     private CityRepository cityRepository;
 
+    @Autowired
+    private AirplaneServiceImpl airplaneService;
+
+
     @RequestMapping("/")
     @ResponseBody
     public String sample(){
@@ -24,6 +30,11 @@ public class TestController {
         s.setName("hk");
         s.setId(5);
         cityRepository.save(s);
+
+        Airplane airplane = new Airplane();
+        airplane.setId(8);
+        airplane.setName("BumboJet");
+        airplaneService.saveAirplane(airplane);
         return "ahoj";
     }
 }

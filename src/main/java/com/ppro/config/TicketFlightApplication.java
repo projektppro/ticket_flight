@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @ComponentScan(basePackages = "com.ppro")
-@EnableJpaRepositories(basePackages = "com.ppro.dao")
+@EnableJpaRepositories(basePackages = "com.ppro.persistence")
 @EntityScan(basePackages = "com.ppro.model")
 public class TicketFlightApplication {
 
