@@ -1,4 +1,4 @@
-package com.ppro.dao;
+package com.ppro.persistence;
 
 import com.ppro.model.City;
 import org.springframework.data.repository.CrudRepository;
