@@ -24,7 +24,6 @@ public class TestController {
 
 
     @RequestMapping("/")
-    @ResponseBody
     public String sample(){
         City s = new City();
         s.setName("hk");
@@ -35,6 +34,12 @@ public class TestController {
         airplane.setId(8);
         airplane.setName("BumboJet");
         airplaneService.saveAirplane(airplane);
-        return "ahoj";
+        return "index";
     }
+
+    @RequestMapping("/index")
+    public String index(){
+        return "index";
+    }
+
 }
